@@ -10,10 +10,10 @@ ll Power(int a,int b)
 	while(b){
 	if(b&1)
 	{
-		res=((res)*(a))%mod;
+		res=(res*a)%mod;
 	}
 	b=b>>1;
-	a=((a)*(a))%mod;
+	a=(a*a)%mod;
     }
     return res;
 }
