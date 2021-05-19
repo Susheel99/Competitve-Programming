@@ -27,11 +27,12 @@ typedef vector<pl> vpl;
 typedef vector<vi> vvi;
 typedef vector<vl> vvl;
 
-int solve()
+float solve()
 {
 	int n;
 	cin>>n;
-	int s=0,e=n,ans=-1;
+	int s=0,e=n;
+	float ans=-1;
 	while(s<=e)
 	{
 		int mid=(s+e)/2;
@@ -48,6 +49,16 @@ int solve()
 			ans=mid;
 			s=mid+1;
 		}
+	}
+	float inc=0.1;
+	for(int i=0;i<5;i++)        //floating point
+	{
+		while(ans*ans<n)
+		{
+			ans+=inc;
+		}
+		ans=ans-inc;
+		inc=inc/10;
 	}
 	return ans;
 }
